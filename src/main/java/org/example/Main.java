@@ -5,26 +5,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        eleccionCantColores();
-
     }
 
-    public static int eleccionCantColores(){
-        Scanner in = new Scanner(System.in);
-        System.out.println("ingrese la cantidad de colores que elegirá: ");
-        int cantColores = validarMayorA0(ingresarSoloNumero());
 
-
-        return cantColores;
-    }
-
-    public static int validarRangoNumero(int numero, int min, int max) {
-        Scanner in = new Scanner(System.in);
-        while (numero < min || numero > max) {
-            System.out.println("El numero no esta dentro de los parametros, ingrese nuevamente: ");
-            numero = in.nextInt();
+    public static boolean validarRangoNumero(int numero, int min, int max) {
+        if (numero < min || numero > max) {
+            System.out.println("El numero no esta dentro de los parametros");
+            return false;
         }
-        return numero;
+        return true;
     }
 
     public static void leerArreglo(int[] arreglo) {
@@ -33,22 +22,20 @@ public class Main {
         }
     }
 
-    public static int validarPositivo(int numero) {
-        Scanner in = new Scanner(System.in);
-        while (numero < 0) {
-            System.out.println("Numero negativo, ingrese nuevamente");
-            numero = ingresarSoloNumero();
+    public static boolean validarPositivo(int numero) {
+        if (numero < 0) {
+            System.out.println("Numero ingresado no valido, se requiere de un valor positivo");
+            return false;
         }
-        return numero;
+        return true;
     }
 
-    public static int validarMayorA0(int numero) {
-        Scanner in = new Scanner(System.in);
-        while (numero <= 0) {
-            System.out.println("Numero no valido, ingrese nuevamente");
-            numero = ingresarSoloNumero();
+    public static boolean validarMayorA0(int numero) {
+        if (numero <= 0) {
+            System.out.println("Numero ingresado no valido, se requiere de un valor mayor a 0");
+            return false;
         }
-        return numero;
+        return true;
     }
 
     public static int ingresarSoloNumero() {
@@ -60,6 +47,4 @@ public class Main {
         int numero = in.nextInt();
         return numero;
     }
-
-
 }
