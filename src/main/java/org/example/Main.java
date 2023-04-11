@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
     }
 
 
@@ -47,4 +46,30 @@ public class Main {
         int numero = in.nextInt();
         return numero;
     }
+
+    public static int eleccionLargo(){
+        System.out.println("ingrese el largo de uña que desea");
+        System.out.println("0.- Natural");
+        System.out.println("1.- S");
+        System.out.println("2.- M");
+        System.out.println("3.- L");
+        return ingresarSoloNumero();
+    }
+
+   /*public static int calcValorLargo(int eleccionLargo){
+       switch (eleccionLargo){
+            case 0:
+                return 0;
+           case 1:
+               return 5000;
+           case 2:
+               return 7000;
+           case 3:
+               return 9000;
+           default:
+               System.out.println("el valor del largo elegido no esta especificado, este no se modificara, volviendo al menu");
+               menu();
+        }
+   }
+    */
 }
