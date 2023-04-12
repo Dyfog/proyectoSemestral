@@ -29,9 +29,6 @@ public class Main {
                 return 5000;
             case 2:
                 return 4000;
-            /*default:
-                System.out.println("El material no ha sido especificado, se volverá al menu");
-                */
         }
         return 0;
     }
